@@ -1,0 +1,46 @@
+var numColunas = document.querySelector("#input-colunas");
+var numLinhas = document.querySelector("#input-linhas");
+var btGerar = document.querySelector("#botao-gerador");
+var localTabela = document.querySelector("#tabela-editavel");
+var checkSentido = document.querySelector("#vertical")
+var tabela = document.createElement("table")
+
+btGerar.addEventListener('click', (event) => {
+    montaTabela()
+	localTabela.appendChild(tabela)
+	tabelaPronta = document.querySelector("table");
+	console.log(tabelaPronta)
+})
+
+function montaCelula(tipo){
+    let celula = document.createElement(tipo);
+    celula.textContent = "Clique para editar"
+	return celula
+}
+
+function montaTabela() {
+    let sentido
+
+    if (checkSentido.checked) {
+        sentido = "vertical"
+    } else {
+        sentido = "horizontal"
+    }
+
+	if (sentido == "vertical") {
+		// cria o cabeçalho
+		let tr = document.createElement("tr")
+        for (let i = 0; i < numColunas.value; i++) {
+			tr.appendChild(montaCelula("th"))
+			tabela.appendChild(tr)
+		}
+		// corpo de tabela
+        for (let i = 1; i < numLinhas.value; i++) {
+			tr = document.createElement("tr")
+            for (let c = 0; c < numColunas.value; c++) {
+				tr.appendChild(montaCelula("td"))
+			}
+			tabela.appendChild(tr)
+		}
+	}
+}
