@@ -8,8 +8,6 @@ var tabela = document.createElement("table")
 btGerar.addEventListener('click', (event) => {
     montaTabela()
 	localTabela.appendChild(tabela)
-	tabelaPronta = document.querySelector("table");
-	console.log(tabelaPronta)
 })
 
 function montaCelula(tipo){

@@ -77,12 +77,11 @@ section {
     width: 50%;
 }
 
-#form-inicio input[type=button] {
-    font-size: 1.2rem;
+input[type=button] {
+    font-size: 1rem;
     color: black;
     margin: auto;
     padding: 1rem;
-    width: 8ch;
     border-radius: 18px;
     background-color: var(--accent-color);
 }
@@ -97,7 +96,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 1rem;
+    margin-block: 2rem;
 }
 
 #tabela-editavel table {
@@ -121,11 +120,9 @@ section {
     justify-content: space-between;
 }
 
-
 #copiar {
     display: flex;
-    align-items: center;
-    gap: 1ch;
+    justify-content: center;
     cursor: pointer;
 }
 
@@ -136,6 +133,7 @@ section {
     padding: 1rem;
     border-radius: 8px;
     font-family: 'Noto Sans Mono';
+    overflow: auto;
 }
 
 .oculto {display: none;}
