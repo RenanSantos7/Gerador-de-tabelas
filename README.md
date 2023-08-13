@@ -5,3 +5,5 @@ Sabe quando você precisa criar uma tabela em HTML? Não dá um trabalhão digit
 ## Screenshots
 
 ## Github Pages
+
+O projeto está disponível através do [Github Pages](https://renansantos7.github.io/Gerador-de-tabelas/)
