@@ -1,5 +1,6 @@
 var numColunas = document.querySelector("#input-colunas");
 var numLinhas = document.querySelector("#input-linhas");
+var secEditTab = document.querySelector("#editar-tabela");
 var btGerar = document.querySelector("#botao-gerador");
 var localTabela = document.querySelector("#tabela-editavel");
 var checkSentido = document.querySelector("#vertical")
@@ -8,6 +9,8 @@ var tabela = document.createElement("table")
 btGerar.addEventListener('click', (event) => {
     montaTabela()
 	localTabela.appendChild(tabela)
+	secEditTab.classList.remove("oculto")
+	rolarPag("#editar-tabela")
 })
 
 function montaCelula(tipo){
@@ -41,4 +44,11 @@ function montaTabela() {
 			tabela.appendChild(tr)
 		}
 	}
+}
+
+function rolarPag(id) {
+	window.scrollTo({
+		top: document.querySelector(id).offsetTop,
+		behavior: "smooth"
+	  });
 }
