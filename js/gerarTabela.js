@@ -1,13 +1,16 @@
-var numColunas = document.querySelector("#input-colunas");
-var numLinhas = document.querySelector("#input-linhas");
-var secEditTab = document.querySelector("#editar-tabela");
-var btGerar = document.querySelector("#botao-gerador");
-var localTabela = document.querySelector("#tabela-editavel");
-var checkSentido = document.querySelector("#vertical")
-var tabela = document.createElement("table")
+const numColunas = document.querySelector("#input-colunas");
+const numLinhas = document.querySelector("#input-linhas");
+const qtColuna = numColunas.value == '' ? 2 : numColunas.value
+const qtLinha = numLinhas.value == '' ? 3 : numLinhas.value
+const secEditTab = document.querySelector("#editar-tabela");
+const btGerar = document.querySelector("#botao-gerador");
+const localTabela = document.querySelector("#tabela-editavel");
+const checkSentido = document.querySelector("#vertical")
+const checkHorizontal = document.querySelector("#horizontal")
+const tabela = document.createElement("table")
 
 btGerar.addEventListener('click', (event) => {
-    montaTabela()
+	montaTabela()
 	localTabela.appendChild(tabela)
 	secEditTab.classList.remove("oculto")
 	rolarPag("#editar-tabela")
@@ -20,31 +23,44 @@ function montaCelula(tipo){
 }
 
 function montaTabela() {
-    let sentido
-
-    if (checkSentido.checked) {
-        sentido = "vertical"
-    } else {
-        sentido = "horizontal"
-    }
-
-	if (sentido == "vertical") {
-		// cria o cabeçalho
-		let tr = document.createElement("tr")
-        for (let i = 0; i < numColunas.value; i++) {
-			tr.appendChild(montaCelula("th"))
-			tabela.appendChild(tr)
-		}
-		// corpo de tabela
-        for (let i = 1; i < numLinhas.value; i++) {
-			tr = document.createElement("tr")
-            for (let c = 0; c < numColunas.value; c++) {
-				tr.appendChild(montaCelula("td"))
-			}
-			tabela.appendChild(tr)
-		}
+	if (checkSentido.checked) {
+		montarTabelaVertical();
+	} else {
+		montarTabelaHorizontal()
 	}
 }
+
+function montarTabelaVertical() {
+	// cria o cabeçalho
+	let tr = document.createElement("tr");
+	for (let i = 0; i < qtColuna; i++) {
+		tr.appendChild(montaCelula("th"));
+		tabela.appendChild(tr);
+	}
+	// corpo de tabela
+	for (let i = 1; i < qtLinha; i++) {
+		tr = document.createElement("tr");
+		for (let c = 0; c < qtColuna; c++) {
+			tr.appendChild(montaCelula("td"));
+		}
+		tabela.appendChild(tr);
+	}
+}
+
+function montarTabelaHorizontal() {
+	for (let i = 0; i < qtLinha; i++) {
+		let tr = document.createElement("tr");
+		tr.appendChild(montaCelula("th"))
+		for (let c = 1; c < qtColuna; i++) {
+			tr.appendChild(montaCelula("td"))
+		}
+		tabela.appendChild(tr);
+	}
+}
+
+checkHorizontal.addEventListener('click', () => {
+	montarTabelaHorizontal()
+})
 
 function rolarPag(id) {
 	window.scrollTo({

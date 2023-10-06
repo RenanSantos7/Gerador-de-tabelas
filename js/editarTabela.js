@@ -7,7 +7,7 @@ tabela.addEventListener('click', (evento) => {
     let celula = evento.target
     celula.contentEditable = true //torna a célula editável
     celula.focus(); // Coloca o foco na célula
-    document.execCommand('selectAll', false, null); // Seleciona todo o conteúdo da célula
+    //document.execCommand('selectAll', false, null); // Seleciona todo o conteúdo da célula
 })
 
 tabela.addEventListener('blur', (evento) => {
