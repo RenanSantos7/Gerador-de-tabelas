@@ -1,0 +1,149 @@
+:root {
+    --bg-main: #f0f0f0;
+    --bg-content: #fafafa;
+    --text-color: #7e7e7e;
+    --title-color: #010101;
+    --accent-color: #04c53e;
+    --border-color: var(--text-color);
+    --shadow: rgba(0,0,0,0.1)
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root{
+        --bg-main: #2a2a2a;
+        --bg-content: #606060;
+        --text-color: #bababa;
+        --title-color: #f0f0f0;
+        --accent-color: #01d13f;
+        --border-color: var(--text-color);
+        --shadow: rgba(255, 255, 255, 0.2);
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    font-family: 'Noto Sans';
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2 {
+    color: var(--title-color)
+}
+
+main h1 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+section {
+    background-color: var(--bg-content);
+    width: min(700px,90vw);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 5px var(--shadow);
+}
+
+#form-inicio {
+    display: flex;
+    gap: 1rem;
+}
+
+#form-inicio form {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#form-inicio label {
+    font-size: 1.2rem;
+}
+
+#form-inicio input[type=number] {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    margin-top: .8rem;
+    padding: 1rem;
+    width: 8ch;
+    border-radius: 8px;
+    border: 1px solid var(--text-color);
+    text-align: right;
+}
+
+#form-inicio .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+input[type=button] {
+    font-size: 1rem;
+    color: black;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 18px;
+    background-color: var(--accent-color);
+}
+
+#editar-tabela #radios {
+    display: flex;
+    gap: 2rem;
+    margin-block: 1rem;
+}
+
+#tabela-editavel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-block: 2rem;
+}
+
+#tabela-editavel table {
+    border: 1px solid var(--border-color);
+}
+
+#tabela-editavel th,
+#tabela-editavel td {
+    border: 1px solid var(--border-color);
+    padding: .5rem;
+}
+
+#tabela-editavel th {
+    border: none;
+    background-color: var(--accent-color);
+    color: black;
+}
+
+#codigo .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#copiar {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    gap: 1rem;
+}
+
+#codigo_mostrar {
+    background-color: var(--bg-main);
+    /* border: 1px solid var(--text-color); */
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    font-family: 'Noto Sans Mono';
+    overflow: auto;
+}
+
+.oculto {display: none;}
