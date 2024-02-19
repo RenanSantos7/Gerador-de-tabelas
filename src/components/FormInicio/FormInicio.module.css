@@ -1,0 +1,9 @@
+.formInicio {
+    display: flex;
+    gap: 1rem;
+}
+
+.formInicio form {
+    display: flex;
+    flex-flow: column nowrap;
+}

@@ -1,0 +1,8 @@
+.botao {
+    font-size: 1rem;
+    color: black;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 18px;
+    background-color: var(--accent-color);
+}

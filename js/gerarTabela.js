@@ -6,7 +6,7 @@ var localTabela = document.querySelector("#tabela-editavel");
 var checkSentido = document.querySelector("#vertical")
 var tabela = document.createElement("table")
 
-btGerar.addEventListener('click', (event) => {
+btGerar.addEventListener('click', () => {
     montaTabela()
 	localTabela.appendChild(tabela)
 	secEditTab.classList.remove("oculto")
@@ -50,5 +50,5 @@ function rolarPag(id) {
 	window.scrollTo({
 		top: document.querySelector(id).offsetTop,
 		behavior: "smooth"
-	  });
+	});
 }

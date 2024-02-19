@@ -1,0 +1,28 @@
+.radios {
+    display: flex;
+    gap: 2rem;
+    margin-block: 1rem;
+}
+
+.tabelaEditavel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-block: 2rem;
+}
+
+.tabelaEditavel table {
+    border: 1px solid var(--border-color);
+}
+
+.tabelaEditavel th,
+.tabelaEditavel td {
+    border: 1px solid var(--border-color);
+    padding: .5rem;
+}
+
+.tabelaEditavel th {
+    border: none;
+    background-color: var(--accent-color);
+    color: black;
+}

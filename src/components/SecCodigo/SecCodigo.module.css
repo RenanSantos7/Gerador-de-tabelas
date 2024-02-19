@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.copiar {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    gap: 1rem;
+}
+
+.codigo_mostrar {
+    background-color: var(--bg-main);
+    /* border: 1px solid var(--text-color); */
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    font-family: monospace;
+    overflow: auto;
+}
