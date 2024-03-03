@@ -7,3 +7,30 @@
     display: flex;
     flex-flow: column nowrap;
 }
+
+.formInicio__label {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 1.2rem;
+}
+
+.input {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    margin-top: .8rem;
+    padding: 1rem;
+    width: 8ch;
+    border-radius: 8px;
+    border: 1px solid var(--text-color);
+    text-align: right;
+}
+
+.botaoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}

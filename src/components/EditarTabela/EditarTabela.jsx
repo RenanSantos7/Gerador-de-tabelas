@@ -1,22 +1,46 @@
-import Botao from '../Elementos/Botao/Botao'
 import styles from './EditarTabela.module.css'
+import Botao from '../Elementos/Botao/Botao'
+import TabelaEditavel from '../Elementos/Tabela/Tabela'
 
-export default function EditarTabela() {
+export default function EditarTabela({
+    linhas,
+    colunas,
+    vertical,
+    setVertical,
+    exibir
+}) {
     return (
-        <section>
+        <section id='editarTabela' style={{
+           // display: editar ? 'block' : 'none'
+        }}>
             <h2>Editar tabela</h2>
             <div className={styles.radios}>
-                <label>
-                    <input type="radio" name="sentido" id="vertical" checked />
-                    Vertical
+                <label className={styles.label}>
+                    <input
+                        type='radio'
+                        name='setindo'
+                        checked={vertical}
+                        onChange={() => setVertical(true)}
+                    />
+                    <span>Vertical</span>
                 </label>
 
-                <label id="horizontal">
-                    <input type="radio" name="sentido" /> Horizontal
+                <label className={styles.label}>
+                    <input
+                        type='radio'
+                        name='sentido'
+                        checked={!vertical}
+                        onChange={() => setVertical(false)}
+                    />
+                    <span>Horizontal</span>
                 </label>
             </div>
 
-            <div id="tabela-editavel"></div>
+            <TabelaEditavel
+                linhas={linhas}
+                colunas={colunas}
+                vertical={vertical}
+            />
 
             <Botao>Gerar código</Botao>
         </section>

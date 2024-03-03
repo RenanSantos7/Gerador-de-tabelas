@@ -1,25 +1,44 @@
 import styles from './FormInicio.module.css'
 import Botao from '../Elementos/Botao/Botao'
-import Input from '../Elementos/Input/Input'
 
-export default function FormInicio() {
+export default function FormInicio({
+    colunas, setColunas,
+    linhas, setLinhas,
+    mostraSecEditar
+}) {
     return (
         <section className={styles.formInicio}>
             <form>
-                <Input
-                    label='Digite o número de colunas:'
-                    min={2}
-                    placeholder='2'
-                />
+                <label className={styles.formInicio__label}>
+                    <span className={styles.label}>Digite o número de colunas:</span>
+                    <input
+                        type="number"
+                        min={2}
+                        className={styles.input}
+                        value={colunas}
+                        onChange={evt => setColunas(Number(evt.target.value))}
+                    />
+                </label>
 
-                <Input
-                    label='Digite o número de linhas:'
-                    min={3}
-                    placeholder='3'
-                />
+                <label className={styles.formInicio__label}>
+                    <span className={styles.label}>Digite o número de linhas:</span>
+                    <input
+                        type="number"
+                        min={3}
+                        className={styles.input}
+                        value={linhas}
+                        onChange={evt => setLinhas(Number(evt.target.value))}
+                    />
+                </label>
             </form>
             
-            <Botao>Gerar!</Botao>
+            <div className={styles.botaoContainer}>
+                <Botao
+                    aoClicar={() => {
+                        mostraSecEditar(true)
+                    }}
+                >Gerar!</Botao>
+            </div>
         </section>
     )
 }
